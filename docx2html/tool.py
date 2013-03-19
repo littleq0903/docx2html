@@ -8,7 +8,6 @@ if __name__ == "__main__":
         print 'Please provide the filename, like `python -m docx2html.tool foo.docx`'
         sys.exit(1)
     html = convert(import_filename)
-    new_html = open(import_filename.replace('.docx','.html'), 'w')
-    new_html.write(html)
-    new_html.close()
+    with open(import_filename.replace('.docx','.html'), 'w') as new_html:
+        new_html.write(html)
 
